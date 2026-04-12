@@ -13,7 +13,7 @@ const FinalCtaSection = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#contacto"
+            href="#donar"
             className="inline-flex items-center gap-2 bg-gradient-warm text-primary-foreground font-body font-semibold px-8 py-4 rounded-full text-lg shadow-warm-lg hover:scale-105 transition-transform"
           >
             <Heart className="w-5 h-5" />

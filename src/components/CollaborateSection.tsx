@@ -10,7 +10,7 @@ const ways = [
 
 const CollaborateSection = () => {
   return (
-    <section id="colaborar" className="py-20 md:py-28 bg-gradient-warm-subtle">
+    <section id="colaborar" className="scroll-mt-6 py-20 md:py-28 bg-gradient-warm-subtle">
       <div className="container mx-auto px-4 max-w-5xl">
         <h2 className="text-3xl md:text-5xl text-foreground text-center mb-14">
           Formas de colaborar

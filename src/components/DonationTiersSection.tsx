@@ -11,7 +11,7 @@ const tiers = [
 
 const DonationTiersSection = () => {
   return (
-    <section id="donar" className="py-20 md:py-28 bg-background">
+    <section id="montos-impacto" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 max-w-6xl">
         <h2 className="text-3xl md:text-5xl text-foreground text-center mb-4">
           Tu aporte genera impacto
@@ -34,7 +34,7 @@ const DonationTiersSection = () => {
               </div>
               <p className="text-foreground font-body text-base leading-relaxed">{tier.desc}</p>
               <a
-                href="#contacto"
+                href="#donar"
                 className="inline-flex items-center gap-2 mt-6 text-primary font-body font-semibold text-sm hover:underline"
               >
                 <Heart className="w-4 h-4" />

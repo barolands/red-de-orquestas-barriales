@@ -8,7 +8,7 @@ const ContactSection = () => {
           Datos para donar
         </h2>
         <div className="grid sm:grid-cols-2 gap-6 mb-12">
-          <div className="bg-background rounded-2xl p-8 border border-border shadow-sm">
+          <div id="donar" className="scroll-mt-6 bg-background rounded-2xl p-8 border border-border shadow-sm">
             <CreditCard className="w-8 h-8 text-primary mb-4" />
             <h3 className="text-lg font-display text-foreground mb-3">Transferencia bancaria</h3>
             <div className="space-y-2 font-body text-sm">
