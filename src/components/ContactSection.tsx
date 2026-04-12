@@ -1,4 +1,4 @@
-import { Mail, MessageCircle, CreditCard, AtSign, Instagram } from "lucide-react";
+import { Mail, MessageCircle, CreditCard, AtSign } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -46,7 +46,7 @@ const ContactSection = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary font-body text-sm transition-colors"
           >
-            <Instagram className="w-5 h-5" />
+            <AtSign className="w-5 h-5" />
             @redeorquestasbarriales
           </a>
         </div>
