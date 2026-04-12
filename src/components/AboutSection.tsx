@@ -1,4 +1,4 @@
-import galleryRehearsal from "@/assets/gallery-rehearsal.jpg";
+import aboutOrquestaEscenario from "@/assets/about-orquesta-escenario.png";
 
 const AboutSection = () => {
   return (
@@ -7,12 +7,12 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="rounded-2xl overflow-hidden shadow-warm">
             <img
-              src={galleryRehearsal}
-              alt="Niña tocando violín con alegría"
+              src={aboutOrquestaEscenario}
+              alt="Orquesta juvenil con violines, violonchelos y contrabajo en escenario"
               className="w-full h-80 md:h-[450px] object-cover"
               loading="lazy"
-              width={800}
-              height={600}
+              width={1200}
+              height={800}
             />
           </div>
           <div>

@@ -1,11 +1,27 @@
-import galleryRehearsal from "@/assets/gallery-rehearsal.jpg";
 import galleryConcert from "@/assets/gallery-concert.jpg";
 import galleryClass from "@/assets/gallery-class.jpg";
 
+const ENSAYOS_VIDEO = "/videos/galeria-ensayos.mp4";
+
 const items = [
-  { img: galleryRehearsal, title: "Ensayos", caption: "Cada semana, más de 250 jóvenes se reúnen a ensayar en sus barrios." },
-  { img: galleryConcert, title: "Conciertos", caption: "Más de 50 presentaciones al año en escenarios de toda la provincia." },
-  { img: galleryClass, title: "Clases", caption: "Formación personalizada con 25 profesionales de la música." },
+  {
+    kind: "video" as const,
+    src: ENSAYOS_VIDEO,
+    title: "Ensayos",
+    caption: "Cada semana, más de 250 jóvenes se reúnen a ensayar en sus barrios.",
+  },
+  {
+    kind: "image" as const,
+    src: galleryConcert,
+    title: "Conciertos",
+    caption: "Más de 50 presentaciones al año en escenarios de toda la provincia.",
+  },
+  {
+    kind: "image" as const,
+    src: galleryClass,
+    title: "Clases",
+    caption: "Formación personalizada con 25 profesionales de la música.",
+  },
 ];
 
 const GallerySection = () => {
@@ -21,15 +37,27 @@ const GallerySection = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {items.map((item, i) => (
             <div key={i} className="group rounded-2xl overflow-hidden shadow-sm hover:shadow-warm transition-shadow duration-300">
-              <div className="overflow-hidden">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  width={800}
-                  height={600}
-                />
+              <div className="overflow-hidden bg-muted">
+                {item.kind === "video" ? (
+                  <video
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label={`${item.title}: video`}
+                  >
+                    <source src={item.src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                  />
+                )}
               </div>
               <div className="p-6 bg-background">
                 <h3 className="text-xl text-foreground mb-2">{item.title}</h3>
