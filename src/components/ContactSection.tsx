@@ -1,8 +1,20 @@
 import { Mail, MessageCircle, CreditCard } from "lucide-react";
 
+/** Contorno tipo glifo de Instagram (rect + lente + punto), coherente con iconos en trazo. */
 const InstagramGlyph = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zm12.406-5.845a1.44 1.44 0 1 1-2.881 0 1.44 1.44 0 0 1 2.881 0z" />
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="2.5" y="2.5" width="19" height="19" rx="5" ry="5" />
+    <circle cx="12" cy="12" r="4.25" />
+    <circle cx="17.5" cy="6.5" r="1.25" />
   </svg>
 );
 
