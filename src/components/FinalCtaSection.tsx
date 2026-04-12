@@ -20,7 +20,7 @@ const FinalCtaSection = () => {
             Donar ahora
           </a>
           <a
-            href="https://wa.me/5493511234567"
+            href="https://wa.me/5493515582258"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border-2 border-primary-foreground/40 text-primary-foreground font-body font-semibold px-8 py-4 rounded-full text-lg hover:bg-primary-foreground/10 transition-colors"
