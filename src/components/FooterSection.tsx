@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
-/** Tu WhatsApp: solo dígitos, código país + número (sin +). Ej.: 5493512345678 */
-const BAROLANDS_WHATSAPP = "";
+/** Tu WhatsApp: solo dígitos, código país + número (sin +). Formato internacional AR (ej. 54911…). */
+const BAROLANDS_WHATSAPP = "5491168344165";
 
 const barolandsWaDigits = BAROLANDS_WHATSAPP.replace(/\D/g, "");
 const barolandsWaHref =
