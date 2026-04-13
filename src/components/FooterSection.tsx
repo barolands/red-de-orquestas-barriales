@@ -17,7 +17,7 @@ const FooterSection = () => {
       <div className="container mx-auto px-4 max-w-6xl space-y-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
           <p className="font-body text-sm text-primary-foreground/60 text-center md:text-left md:max-w-md">
-            desde las sierras hecha con amor por barolands
+            Desde las sierras hecha con amor por Barolands.
           </p>
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-end sm:gap-4 md:text-right">
             <p className="font-body text-sm text-primary-foreground/80 text-center sm:text-left">
