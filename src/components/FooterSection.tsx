@@ -21,7 +21,7 @@ const FooterSection = () => {
           </p>
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-end sm:gap-4 md:text-right">
             <p className="font-body text-sm text-primary-foreground/80 text-center sm:text-left">
-              ¿queres una página como esta?
+              ¿Querés una página como esta?
             </p>
             {barolandsWaHref ? (
               <a
