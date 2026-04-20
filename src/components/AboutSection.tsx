@@ -22,8 +22,19 @@ const AboutSection = () => {
             <p className="text-lg text-muted-foreground font-body leading-relaxed mb-4">
               Somos una iniciativa social y cultural que brinda acceso gratuito a formación musical a niños, niñas y jóvenes de barrios populares de Córdoba.
             </p>
-            <p className="text-lg text-muted-foreground font-body leading-relaxed">
+            <p className="text-lg text-muted-foreground font-body leading-relaxed mb-4">
               Creemos que la música es una herramienta poderosa de transformación social. A través de ella, generamos espacios de encuentro, aprendizaje y contención, donde cada joven descubre su potencial y construye un camino de oportunidades.
+            </p>
+            <p className="text-base text-muted-foreground font-body">
+              <span className="block mb-1 font-medium text-foreground">Sitio publicado (GitHub Pages)</span>
+              <a
+                href="https://barolands.github.io/red-de-orquestas-barriales/"
+                className="text-primary underline underline-offset-4 hover:opacity-90 break-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                barolands.github.io/red-de-orquestas-barriales
+              </a>
             </p>
           </div>
         </div>
