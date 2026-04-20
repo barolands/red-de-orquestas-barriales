@@ -12,7 +12,6 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCtaSection from "@/components/FinalCtaSection";
 import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
-import StickyDonateButton from "@/components/StickyDonateButton";
 
 const Index = () => {
   return (
@@ -31,7 +30,6 @@ const Index = () => {
       <FinalCtaSection />
       <ContactSection />
       <FooterSection />
-      <StickyDonateButton />
     </>
   );
 };
