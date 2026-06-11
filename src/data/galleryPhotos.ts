@@ -3,7 +3,7 @@ import galleryConcert from "@/assets/gallery-concert.jpg";
 import galleryClass from "@/assets/gallery-class.jpeg";
 import galleryClassAlt from "@/assets/gallery-class.jpg";
 import aboutOrquesta from "@/assets/about-orquesta-escenario.png";
-import heroOrchestra from "@/assets/hero-orchestra.jpg";
+import galleryFirst from "@/assets/gallery-first.jpg";
 
 export type GalleryPhoto = {
   src: string;
@@ -14,7 +14,7 @@ export type GalleryPhoto = {
 /** Agregá más fotos importando la imagen y sumando un objeto a este array. */
 export const galleryPhotos: GalleryPhoto[] = [
   {
-    src: heroOrchestra,
+    src: galleryFirst,
     alt: "Orquesta juvenil en escenario",
     caption: "Música en vivo en los barrios",
   },
