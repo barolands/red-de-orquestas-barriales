@@ -1,6 +1,6 @@
 import galleryRehearsal from "@/assets/gallery-rehearsal.jpg";
 import galleryConcert from "@/assets/gallery-concert.jpg";
-import galleryClass from "@/assets/gallery-class.jpeg";
+import geico from "@/assets/geico.jpg";
 import galleryClassAlt from "@/assets/gallery-class.jpg";
 import aboutOrquesta from "@/assets/about-orquesta-escenario.png";
 import galleryFirst from "@/assets/gallery-first.jpg";
@@ -29,7 +29,7 @@ export const galleryPhotos: GalleryPhoto[] = [
     caption: "Presentaciones en escenario",
   },
   {
-    src: galleryClass,
+    src: geico,
     alt: "Clase de música con un profesor",
     caption: "Formación musical",
   },
