@@ -1,12 +1,12 @@
 import heroMarca from "@/assets/hero-marca.png";
-import { Heart, HandHeart } from "lucide-react";
+import { Heart, HandHeart, ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <section className="relative min-h-screen flex flex-col overflow-hidden bg-background">
       <div className="absolute inset-0 bg-gradient-to-b from-muted/50 via-background to-muted/20 pointer-events-none" />
-      <div className="relative z-10 container mx-auto px-4 py-16 md:py-24">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16 max-w-6xl mx-auto">
+      <div className="relative z-10 flex-1 flex items-center container mx-auto px-4 py-16 md:py-24">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16 max-w-6xl mx-auto w-full">
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end shrink-0">
             <img
               src={heroMarca}
@@ -51,6 +51,21 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="relative z-10 shrink-0 flex justify-center px-4 pt-6 pb-10 md:pb-12 animate-fade-up"
+        style={{ animationDelay: "0.8s" }}
+      >
+        <a
+          href="#nosotros"
+          className="flex flex-col items-center justify-center gap-2 px-6 py-3 rounded-full bg-muted/70 border border-foreground/15 text-foreground/85 hover:text-foreground hover:bg-muted hover:border-foreground/25 shadow-sm hover:shadow-md transition-all animate-pulse-soft text-center"
+          aria-label="Continuá viendo a nuestros músicos"
+        >
+          <span className="font-body text-sm md:text-base font-semibold tracking-wide text-center">
+            Continuá viendo a nuestros músicos
+          </span>
+          <ChevronDown className="w-6 h-6 text-primary animate-bounce" aria-hidden />
+        </a>
       </div>
     </section>
   );
