@@ -4,7 +4,7 @@ import galleryClass from "@/assets/gallery-class.jpeg";
 
 /** URL, ID de video o canal de YouTube. Vacío = se muestra la imagen de la tarjeta. */
 const ENSAYOS_YOUTUBE_URL_OR_ID =
-  "https://www.youtube.com/@Reddeorquestas-s5z/videos";
+  "https://www.youtube.com/watch?v=vExMEXcYXOA";
 const CONCIERTOS_YOUTUBE_URL_OR_ID =
   "https://www.youtube.com/shorts/lUm7GY5Ccug";
 
