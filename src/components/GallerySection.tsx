@@ -6,7 +6,7 @@ import galleryClass from "@/assets/gallery-class.jpeg";
 const ENSAYOS_YOUTUBE_URL_OR_ID =
   "https://www.youtube.com/@Reddeorquestas-s5z/videos";
 const CONCIERTOS_YOUTUBE_URL_OR_ID =
-  "https://www.youtube.com/@Reddeorquestas-s5z";
+  "https://www.youtube.com/shorts/lUm7GY5Ccug";
 
 /** Video destacado en @Reddeorquestas-s5z/videos */
 const RED_ORQUESTAS_FEATURED_VIDEO = "vExMEXcYXOA";
