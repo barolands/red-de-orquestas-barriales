@@ -1,4 +1,4 @@
-import aboutOrquestaEscenario from "@/assets/about-orquesta-escenario.png";
+import aboutOrquestaEscenario from "@/assets/6.png";
 
 const AboutSection = () => {
   return (
