@@ -52,11 +52,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-pulse-soft">
-        <div className="w-6 h-10 border-2 border-foreground/25 rounded-full flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-foreground/40 rounded-full" />
-        </div>
-      </div>
     </section>
   );
 };
