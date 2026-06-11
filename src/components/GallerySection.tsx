@@ -2,10 +2,20 @@ import galleryRehearsal from "@/assets/gallery-rehearsal.jpg";
 import galleryConcert from "@/assets/gallery-concert.jpg";
 import galleryClass from "@/assets/gallery-class.jpeg";
 
-/** URL o ID de YouTube. Vacío = se muestra la imagen de la tarjeta. */
-const ENSAYOS_YOUTUBE_URL_OR_ID = "https://youtu.be/dfT-AAWomTQ";
+/** URL, ID de video o canal de YouTube. Vacío = se muestra la imagen de la tarjeta. */
+const ENSAYOS_YOUTUBE_URL_OR_ID =
+  "https://www.youtube.com/@Reddeorquestas-s5z/videos";
 const CONCIERTOS_YOUTUBE_URL_OR_ID =
-  "https://youtube.com/shorts/bJQTI6pbFxc";
+  "https://www.youtube.com/@Reddeorquestas-s5z";
+
+/** Video destacado en @Reddeorquestas-s5z/videos */
+const RED_ORQUESTAS_FEATURED_VIDEO = "vExMEXcYXOA";
+/** Playlist de subidas del canal @Reddeorquestas-s5z (UC → UU). */
+const RED_ORQUESTAS_UPLOADS_PLAYLIST = "UUDe37a7QhIrmv9z4YQvIDSw";
+
+type YoutubeEmbed =
+  | { type: "video"; id: string }
+  | { type: "playlist"; id: string };
 
 function parseYoutubeVideoId(raw: string): string | undefined {
   const s = raw.trim();
@@ -17,10 +27,40 @@ function parseYoutubeVideoId(raw: string): string | undefined {
   return m?.[1];
 }
 
+function parseYoutubeEmbed(raw: string): YoutubeEmbed | undefined {
+  const s = raw.trim();
+  if (!s) return undefined;
+
+  const channelMatch = s.match(/youtube\.com\/channel\/(UC[\w-]+)/);
+  if (channelMatch) {
+    return { type: "playlist", id: `UU${channelMatch[1].slice(2)}` };
+  }
+
+  if (/youtube\.com\/@Reddeorquestas-s5z\/videos/i.test(s)) {
+    return { type: "video", id: RED_ORQUESTAS_FEATURED_VIDEO };
+  }
+
+  if (/youtube\.com\/@Reddeorquestas-s5z/i.test(s)) {
+    return { type: "playlist", id: RED_ORQUESTAS_UPLOADS_PLAYLIST };
+  }
+
+  const videoId = parseYoutubeVideoId(s);
+  if (videoId) return { type: "video", id: videoId };
+
+  return undefined;
+}
+
+function youtubeEmbedSrc(embed: YoutubeEmbed): string {
+  if (embed.type === "playlist") {
+    return `https://www.youtube.com/embed/videoseries?list=${embed.id}&rel=0`;
+  }
+  return `https://www.youtube.com/embed/${embed.id}?rel=0`;
+}
+
 type GalleryItem =
   | {
       kind: "youtube";
-      videoId: string;
+      embed: YoutubeEmbed;
       title: string;
       caption: string;
     }
@@ -31,24 +71,24 @@ type GalleryItem =
       caption: string;
     };
 
-const ensayosYoutubeId =
-  parseYoutubeVideoId(ENSAYOS_YOUTUBE_URL_OR_ID) ??
-  parseYoutubeVideoId(
+const ensayosYoutubeEmbed =
+  parseYoutubeEmbed(ENSAYOS_YOUTUBE_URL_OR_ID) ??
+  parseYoutubeEmbed(
     (import.meta.env.VITE_ENSAYOS_YOUTUBE_URL_OR_ID as string | undefined) ?? ""
   );
 
-const conciertosYoutubeId =
-  parseYoutubeVideoId(CONCIERTOS_YOUTUBE_URL_OR_ID) ??
-  parseYoutubeVideoId(
+const conciertosYoutubeEmbed =
+  parseYoutubeEmbed(CONCIERTOS_YOUTUBE_URL_OR_ID) ??
+  parseYoutubeEmbed(
     (import.meta.env.VITE_CONCIERTOS_YOUTUBE_URL_OR_ID as string | undefined) ??
       ""
   );
 
 const items: GalleryItem[] = [
-  ensayosYoutubeId
+  ensayosYoutubeEmbed
     ? {
         kind: "youtube",
-        videoId: ensayosYoutubeId,
+        embed: ensayosYoutubeEmbed,
         title: "Ensayos",
         caption:
           "Cada semana, más de 250 jóvenes se reúnen a ensayar en sus barrios.",
@@ -60,10 +100,10 @@ const items: GalleryItem[] = [
         caption:
           "Cada semana, más de 250 jóvenes se reúnen a ensayar en sus barrios.",
       },
-  conciertosYoutubeId
+  conciertosYoutubeEmbed
     ? {
         kind: "youtube",
-        videoId: conciertosYoutubeId,
+        embed: conciertosYoutubeEmbed,
         title: "Conciertos",
         caption:
           "Más de 50 presentaciones al año en escenarios de toda la provincia.",
@@ -101,7 +141,7 @@ const GallerySection = () => {
                   <div className="relative w-full h-64 overflow-hidden">
                     <iframe
                       title={`Video: ${item.title}`}
-                      src={`https://www.youtube.com/embed/${item.videoId}?rel=0`}
+                      src={youtubeEmbedSrc(item.embed)}
                       className="absolute left-0 -top-14 w-full h-[calc(100%+3.5rem)] border-0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
